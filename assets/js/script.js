@@ -8,6 +8,7 @@ var numOfWins = 0;
 var wrongLettersText = document.getElementById("wrongLetters");
 var numOfGuessesText = document.getElementById("guessesLeft");
 var numOfWinsText = document.getElementById("wins");
+var instructionText = document.getElementById("instructions");
 
 
 // Fist run of preGame()
@@ -22,7 +23,9 @@ function preGame () {
 
     wrongLettersText.innerHTML = "Wrong Letters: ";
     numOfGuessesText.innerHTML = "Guesses Left: " + numOfGuessesLeft;
+    instructionText.innerHTML = "Press a letter key to start!";
     answerArray.length = 0;
+    guessingTermArray.length = 0;
 
     runGame(guessingTerm, numOfGuessesLeft);
 }
@@ -61,7 +64,7 @@ function runGame (guessingTerm, numOfGuessesLeft) {
             alert("Already guessed this letter!!");
         }
 
-        else if (event.keyCode != 13) {
+        else if (event.keyCode != 13 && event.keyCode != 17 && event.keyCode != 16 && event.keyCode != 32) {
             guessedLetters.push(guessedLetter.toUpperCase());
 
             // Check if letter exists in word
@@ -90,6 +93,7 @@ function runGame (guessingTerm, numOfGuessesLeft) {
 
             if (numOfLettersLeft == 0) {
                 alert("You Win! Press Enter to Play Again!");
+                instructionText.innerHTML = "Press Enter to Play Again!";
                 numOfWins++;
                 numOfWinsText.innerHTML = "Wins: " + numOfWins;
             }

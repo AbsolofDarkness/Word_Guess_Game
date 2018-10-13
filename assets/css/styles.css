@@ -5,10 +5,16 @@
 
 * {
     font-family: customFont;
+    color: white;
 }
 
 body {
-    background-image: url(/assets/images/StarryNight.png);
+    background-image: url(../images/StarryNight.png);
+    background-position: 0;
+}
+
+h1 {
+    font-size: 56px;
 }
 
 .container {
