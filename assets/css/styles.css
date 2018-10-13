@@ -1,0 +1,19 @@
+@font-face {
+    font-family: customFont;
+    src: url(../fonts/SulphurPoint-Light.otf);
+}
+
+* {
+    font-family: customFont;
+}
+
+body {
+    background-image: url(/assets/images/StarryNight.png);
+}
+
+.container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
