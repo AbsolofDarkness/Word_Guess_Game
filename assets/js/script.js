@@ -64,7 +64,7 @@ function runGame (guessingTerm, numOfGuessesLeft) {
             alert("Already guessed this letter!!");
         }
 
-        else if (event.keyCode != 13 && event.keyCode != 17 && event.keyCode != 16 && event.keyCode != 32) {
+        else if (event.keyCode >= 65 && event.keyCode <= 90) {
             guessedLetters.push(guessedLetter.toUpperCase());
 
             // Check if letter exists in word
