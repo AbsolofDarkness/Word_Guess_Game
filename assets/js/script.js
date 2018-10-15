@@ -11,7 +11,7 @@ var numOfWinsText = document.getElementById("wins");
 var instructionText = document.getElementById("instructions");
 
 
-// Fist run of preGame()
+// First run of preGame()
 preGame();
 
 // Gets word, resets numOfGuesses, resets guessed letters
@@ -53,11 +53,11 @@ function runGame (guessingTerm, numOfGuessesLeft) {
     }
 
     // Game Loop
-    document.onkeyup = function(event) {
+    document.onkeydown = function(event) {
         var guessedLetter;
         var letterIncluded = false;
         guessedLetter = event.key;
-        console.log(guessedLetter);
+        // console.log(guessedLetter);
 
         // Check if letter has already been guessed
         if (guessedLetters.includes(guessedLetter.toUpperCase()) == true) {
