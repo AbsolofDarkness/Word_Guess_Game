@@ -27,7 +27,7 @@ function preGame () {
     answerArray.length = 0;
     guessingTermArray.length = 0;
 
-    runGame(guessingTerm, numOfGuessesLeft);
+    runGame(guessingTerm.toUpperCase(), numOfGuessesLeft);
 }
 
 function runGame (guessingTerm, numOfGuessesLeft) {
@@ -69,7 +69,7 @@ function runGame (guessingTerm, numOfGuessesLeft) {
 
             // Check if letter exists in word
             for (var x = 0; x < guessingTermArray.length; x++) {
-                if (guessedLetter == guessingTerm.charAt(x)) {
+                if (guessedLetter.toUpperCase() == guessingTerm.charAt(x)) {
                     answerArray[x] = guessedLetter.toUpperCase();
                     numOfLettersLeft--;
                     letterIncluded = true;
@@ -104,6 +104,7 @@ function runGame (guessingTerm, numOfGuessesLeft) {
         }
 
         // Testing, remove after push to production
+        console.log(guessedLetter);
         console.log(guessingTermArray);
         console.log("Number of Guesses: " + numOfGuessesLeft);
         console.log("Number of Letters Left: " + numOfLettersLeft);
